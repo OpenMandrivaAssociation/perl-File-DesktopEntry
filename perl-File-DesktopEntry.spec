@@ -1,7 +1,7 @@
 %define module	File-DesktopEntry
 %define name	perl-%{module}
 %define version 0.02
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary:	Object to handle .desktop files
 Name:		%{name}
