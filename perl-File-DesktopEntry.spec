@@ -1,18 +1,19 @@
 %define module	File-DesktopEntry
 %define name	perl-%{module}
-%define version 0.02
-%define release %mkrel 3
+%define version 0.04
+%define release %mkrel 1
 
-Summary:	Object to handle .desktop files
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
+Summary:	Object to handle .desktop files
 License:	GPL
 Group:		Development/Perl
-Source:		http://www.cpan.org/authors/id/P/PA/PARDUS/%{module}/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot/
+Source:     http://www.cpan.org/modules/by-module/File/%{module}-%{version}.tar.gz
+BuildRequires:	perl(File::BaseDir)
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module is used to work with .desktop files. The format of these files is
