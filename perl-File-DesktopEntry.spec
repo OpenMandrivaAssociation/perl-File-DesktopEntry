@@ -12,6 +12,7 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}/
 Source:     http://www.cpan.org/modules/by-module/File/%{module}-%{version}.tar.gz
 BuildRequires:	perl(File::BaseDir)
+BuildRequires:	perl(Module::Build)
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
@@ -23,18 +24,18 @@ specified by the freedesktop "Desktop Entry" specification.
 %setup -q -n %{module}-%{version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%{__make}
+%{__perl} Build.PL installdirs=vendor
+./Build
 
 %check
-%{__make} test
+./Build test
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%makeinstall_std
+rm -rf %{buildroot}
+./Build install destdir=%{buildroot}
 
 %files
 %defattr(-,root,root)
