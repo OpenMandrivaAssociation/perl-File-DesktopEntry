@@ -1,27 +1,27 @@
-%define module	File-DesktopEntry
-%define name	perl-%{module}
-%define version 0.04
-%define release %mkrel 3
+%define upstream_name	 File-DesktopEntry
+%define upstream_version 0.04
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Object to handle .desktop files
 License:	GPL
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}/
-Source:     http://www.cpan.org/modules/by-module/File/%{module}-%{version}.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:    http://www.cpan.org/modules/by-module/File/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl(File::BaseDir)
 BuildRequires:	perl(Module::Build)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module is used to work with .desktop files. The format of these files is
 specified by the freedesktop "Desktop Entry" specification.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Build.PL installdirs=vendor
@@ -42,5 +42,3 @@ rm -rf %{buildroot}
 %doc README Changes
 %{_mandir}/*/*
 %{perl_vendorlib}/File/DesktopEntry.pm
-
-
