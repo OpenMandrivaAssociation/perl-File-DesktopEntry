@@ -22,14 +22,14 @@ specified by the freedesktop "Desktop Entry" specification.
 %setup -qn %{modname}-%{modver}
 
 %build
-%{__perl} Build.PL installdirs=vendor
-./Build
+%{__perl} Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-./Build test
+%make test
 
 %install
-./Build install destdir=%{buildroot}
+%makeinstall_std
 
 %files
 %doc README Changes
