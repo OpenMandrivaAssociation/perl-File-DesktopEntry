@@ -1,10 +1,11 @@
 %define modname	File-DesktopEntry
-%define modver	0.04
+%define modver 0.08
 
 Summary:	Object to handle .desktop files
+
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	9
+Release:	1
 License:	GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
@@ -34,4 +35,5 @@ specified by the freedesktop "Desktop Entry" specification.
 %doc README Changes
 %{perl_vendorlib}/File/DesktopEntry.pm
 %{_mandir}/man3/*
+
 
