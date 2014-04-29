@@ -13,6 +13,7 @@ Source0:	http://www.cpan.org/modules/by-module/File/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(File::BaseDir)
 BuildRequires:	perl(Module::Build)
+BuildRequires:	perl(JSON::PP)
 
 %description
 This module is used to work with .desktop files. The format of these files is
@@ -35,5 +36,3 @@ specified by the freedesktop "Desktop Entry" specification.
 %doc README Changes
 %{perl_vendorlib}/File/DesktopEntry.pm
 %{_mandir}/man3/*
-
-
