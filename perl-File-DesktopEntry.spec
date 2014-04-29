@@ -14,6 +14,7 @@ BuildArch:	noarch
 BuildRequires:	perl(File::BaseDir)
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(JSON::PP)
+BuildRequires:	perl-devel
 
 %description
 This module is used to work with .desktop files. The format of these files is
