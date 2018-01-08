@@ -35,6 +35,6 @@ specified by the freedesktop "Desktop Entry" specification.
 %makeinstall_std
 
 %files
-%doc README Changes
+%doc README.md Changes
 %{perl_vendorlib}/File/DesktopEntry.pm
 %{_mandir}/man3/*
