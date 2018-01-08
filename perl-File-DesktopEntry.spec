@@ -14,6 +14,7 @@ BuildArch:	noarch
 BuildRequires:	perl(File::BaseDir)
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(JSON::PP)
+BuildRequires:	perl(URI::Escape)
 BuildRequires:	perl-devel
 
 %description
