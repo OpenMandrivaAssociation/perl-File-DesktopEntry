@@ -15,6 +15,7 @@ BuildRequires:	perl(File::BaseDir)
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(JSON::PP)
 BuildRequires:	perl(URI::Escape)
+BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
 
 %description
@@ -25,14 +26,14 @@ specified by the freedesktop "Desktop Entry" specification.
 %setup -qn %{modname}-%{modver}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%make
+%{__perl} Makefile.PL INSTALLDIRS=vendor OPTIMIZE="%{optflags}"
+%make_build
 
 %check
 %make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc README.md Changes
