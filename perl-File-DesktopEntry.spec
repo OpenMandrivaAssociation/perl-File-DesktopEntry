@@ -1,15 +1,15 @@
 %define modname	File-DesktopEntry
-%define modver 0.22
+%define modver 0.23
 
 Summary:	Object to handle .desktop files
 
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	3
+Version:	%{modver}
+Release:	1
 License:	GPLv2
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}/
-Source0:	http://www.cpan.org/modules/by-module/File/%{modname}-%{modver}.tar.gz
+Url:		https://codeberg.org/michielb/File-DesktopEntry
+Source0:	https://cpan.metacpan.org/authors/id/M/MI/MICHIELB/File-DesktopEntry-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl(File::BaseDir)
